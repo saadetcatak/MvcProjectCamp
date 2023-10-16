@@ -30,7 +30,7 @@ namespace MvcProjectCamp.Controllers
                                                       Value=x.CategoryID.ToString()
                                                   }).ToList();
 
-            ViewBag.valuec = valuecategory;
+            ViewBag.vlc = valuecategory;
 
             List<SelectListItem> valuewriter = (from x in writerManager.TGetList()
                                                 select new SelectListItem
@@ -39,7 +39,7 @@ namespace MvcProjectCamp.Controllers
                                                     Value = x.WriterID.ToString()
                                                 }).ToList();
 
-            ViewBag.valuew = valuewriter;
+            ViewBag.vlw = valuewriter;
             return View();
         }
 
