@@ -10,6 +10,7 @@ namespace DataAccessLayer.Abstract
     public interface IGenericDal<T>
     {
         List<T> GetList();
+   
         T Get(Expression<Func<T, bool>> filter);
         void Insert(T t);
         void Update(T t);

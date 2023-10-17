@@ -78,6 +78,26 @@
     <Compile Include="Migrations\202310051035512_mig_writer_title.designer.cs">
       <DependentUpon>202310051035512_mig_writer_title.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202310162053106_add_mig_writer_update.cs" />
+    <Compile Include="Migrations\202310162053106_add_mig_writer_update.designer.cs">
+      <DependentUpon>202310162053106_add_mig_writer_update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310162058291_add_mig_writer_update1.cs" />
+    <Compile Include="Migrations\202310162058291_add_mig_writer_update1.designer.cs">
+      <DependentUpon>202310162058291_add_mig_writer_update1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310171230138_mig_writer_addstatus.cs" />
+    <Compile Include="Migrations\202310171230138_mig_writer_addstatus.designer.cs">
+      <DependentUpon>202310171230138_mig_writer_addstatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310171340455_mig_content_addstatus.cs" />
+    <Compile Include="Migrations\202310171340455_mig_content_addstatus.designer.cs">
+      <DependentUpon>202310171340455_mig_content_addstatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310171343392_mig_heading_addstatus.cs" />
+    <Compile Include="Migrations\202310171343392_mig_heading_addstatus.designer.cs">
+      <DependentUpon>202310171343392_mig_heading_addstatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -100,6 +120,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202310051035512_mig_writer_title.resx">
       <DependentUpon>202310051035512_mig_writer_title.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310162053106_add_mig_writer_update.resx">
+      <DependentUpon>202310162053106_add_mig_writer_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310162058291_add_mig_writer_update1.resx">
+      <DependentUpon>202310162058291_add_mig_writer_update1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310171230138_mig_writer_addstatus.resx">
+      <DependentUpon>202310171230138_mig_writer_addstatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310171340455_mig_content_addstatus.resx">
+      <DependentUpon>202310171340455_mig_content_addstatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310171343392_mig_heading_addstatus.resx">
+      <DependentUpon>202310171343392_mig_heading_addstatus.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

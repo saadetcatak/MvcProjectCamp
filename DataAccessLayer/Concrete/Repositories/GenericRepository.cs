@@ -45,7 +45,7 @@ namespace DataAccessLayer.Concrete.Repositories
         public void Insert(T t)
         {
             c.Set<T>().Add(t);
-            c.SaveChanges();    
+            c.SaveChanges();
         }
 
         public List<T> List(Expression<Func<T, bool>> filter)
