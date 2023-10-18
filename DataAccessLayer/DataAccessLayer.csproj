@@ -98,6 +98,10 @@
     <Compile Include="Migrations\202310171343392_mig_heading_addstatus.designer.cs">
       <DependentUpon>202310171343392_mig_heading_addstatus.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202310181402450_add_mig_hstatus.cs" />
+    <Compile Include="Migrations\202310181402450_add_mig_hstatus.designer.cs">
+      <DependentUpon>202310181402450_add_mig_hstatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -135,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202310171343392_mig_heading_addstatus.resx">
       <DependentUpon>202310171343392_mig_heading_addstatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310181402450_add_mig_hstatus.resx">
+      <DependentUpon>202310181402450_add_mig_hstatus.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

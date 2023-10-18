@@ -3,10 +3,11 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
-    int count = 0;
+
 }
 
 @{
+    int count = 0;
     string color = " ";
     string headingColor = " ";
     string status = " ";
@@ -86,12 +87,12 @@
                                 color = "badge badge-light";
                             }
 
-                            if (item.HeadingStatus == true)
+                            if (item.HStatus == true)
                             {
                                 headingColor = "badge badge-success";
                                 status= "AKTİF";
                             }
-                            else if (item.HeadingStatus == false)
+                            else if (item.HStatus == false)
                             {
                                 headingColor = "badge badge-danger";
                                 status = "PASİF";

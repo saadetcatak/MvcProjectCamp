@@ -13,7 +13,7 @@ namespace EntityLayer.Concrete
         [StringLength(100)]
         public string HeadingName { get; set; }
         public DateTime HeadingDate { get; set; }
-        public bool HeadingStatus { get; set; }
+        public bool HStatus { get; set; }
         public int CategoryID { get; set; }
         public virtual Category Category { get; set; }
 
@@ -21,5 +21,9 @@ namespace EntityLayer.Concrete
 
         public int WriterID { get; set; }
         public virtual Writer Writer { get; set; }
+
+        public class HeadingStatus
+        {
+        }
     }
 }

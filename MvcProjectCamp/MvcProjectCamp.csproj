@@ -141,6 +141,7 @@
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AdminCategoryController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ContentController.cs" />
     <Compile Include="Controllers\HeadingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -2288,11 +2289,13 @@
     <Content Include="Views\Heading\AddHeading.cshtml" />
     <Content Include="Views\Content\ContentByHeading.cshtml" />
     <Content Include="Views\Heading\UpdateHeading.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\About\AboutPartial.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\About\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -13,6 +13,10 @@ namespace BusinessLayer.Concrete
     {
         IAboutDal _aboutDal;
 
+        public AboutManager()
+        {
+        }
+
         public AboutManager(IAboutDal aboutDal)
         {
             _aboutDal = aboutDal;

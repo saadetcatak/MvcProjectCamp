@@ -20,5 +20,7 @@ namespace MvcProjectCamp.Controllers
             var values = contentManager.TGetByID(id);
             return View(values);
         }
+
+        
     }
 }

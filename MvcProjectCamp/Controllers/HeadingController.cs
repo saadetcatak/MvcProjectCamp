@@ -77,7 +77,7 @@ namespace MvcProjectCamp.Controllers
         {
             var value = headingManager.TGetByID(id);
             headingManager.TDelete(value);
-            return RedirectToAction("ındex");
+            return RedirectToAction("Index");
         }
     }
 }

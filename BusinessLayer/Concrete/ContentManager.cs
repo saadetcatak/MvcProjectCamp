@@ -18,6 +18,8 @@ namespace BusinessLayer.Concrete
             _contentDal = contentDal;
         }
 
+       
+
         public void TDelete(Content t)
         {
             _contentDal.Delete(t);
@@ -32,6 +34,11 @@ namespace BusinessLayer.Concrete
         public List<Content> TGetList()
         {
             return _contentDal.GetList();
+        }
+
+        public List<Content> TGetListByID()
+        {
+            throw new NotImplementedException();
         }
 
         public void TInsert(Content t)
