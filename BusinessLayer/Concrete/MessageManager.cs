@@ -1,6 +1,7 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -52,5 +53,7 @@ namespace BusinessLayer.Concrete
         {
             _messageDal.Update(t);
         }
+
+      
     }
 }

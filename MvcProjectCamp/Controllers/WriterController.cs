@@ -31,6 +31,7 @@ namespace MvcProjectCamp.Controllers
         public ActionResult AddWiter(Writer p)
         {
             WriterValidator writervalidator = new WriterValidator();
+
             ValidationResult results = writervalidator.Validate(p);
 
             if(results.IsValid)
