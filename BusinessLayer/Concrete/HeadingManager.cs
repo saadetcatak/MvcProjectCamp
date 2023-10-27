@@ -22,6 +22,11 @@ namespace BusinessLayer.Concrete
             _headingDal = headingDal;
         }
 
+        public List<Heading> GetListByWriter()
+        {
+            return _headingDal.List(x => x.WriterID == 4);
+        }
+
         public void TDelete(Heading t)
         {
             _headingDal.Delete(t);

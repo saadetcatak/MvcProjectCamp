@@ -18,7 +18,10 @@ namespace BusinessLayer.Concrete
             _contentDal = contentDal;
         }
 
-       
+        public List<Content> TGetListByWriter()
+        {
+            return _contentDal.List(x => x.WriterID == 4);
+        }
 
         public void TDelete(Content t)
         {

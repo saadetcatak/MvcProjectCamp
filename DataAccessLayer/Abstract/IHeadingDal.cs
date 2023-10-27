@@ -9,6 +9,6 @@ namespace DataAccessLayer.Abstract
 {
     public interface IHeadingDal:IGenericDal<Heading>
     {
-       
+        List<Heading> GetListByWriter();
     }
 }

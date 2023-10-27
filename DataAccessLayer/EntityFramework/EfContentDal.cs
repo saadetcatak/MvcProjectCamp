@@ -12,7 +12,10 @@ namespace DataAccessLayer.EntityFramework
 {
     public class EfContentDal : GenericRepository<Content>, IContentDal
     {
-     
-        
+        Context context = new Context();
+        public List<Content> GetListByWriter()
+        {
+            return context.Contents.Where(x => x.WriterID == 4).ToList();
+        }
     }
 }

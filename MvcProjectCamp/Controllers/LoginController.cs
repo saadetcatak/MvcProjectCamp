@@ -42,5 +42,36 @@ namespace MvcProjectCamp.Controllers
 
             return View();
         }
+        [HttpGet]
+        public ActionResult WriterLogin()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult WriterLogin(Writer writer)
+        {
+            Context context = new Context();
+            var writeruser = context.Writers.FirstOrDefault(x => x.WriterName == writer.WriterMail && x.WriterPassword == writer.WriterPassword);
+
+            if (writeruser != null)
+            {
+
+                FormsAuthentication.SetAuthCookie(writeruser.WriterMail, false);
+                Session["WriterMail"] = writeruser.WriterMail;
+                return RedirectToAction("MyContent", "WriterPanelContent");
+
+            }
+
+            else
+            {
+                ViewBag.error = "Kullanıcı Adınız veya Şifreniz Hatalı, Tekrar Deneyin.";
+                return RedirectToAction("WriterLogin","Login");
+
+            }
+
+            
+            return View();
+        }
     }
 }

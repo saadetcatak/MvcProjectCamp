@@ -15,9 +15,9 @@ namespace MvcProjectCamp.Controllers
         {
             return View();
         }
-        public ActionResult ContentByHeading(int id)
+        public ActionResult ContentByHeading()
         {
-            var values = contentManager.TGetByID(id);
+            var values = contentManager.TGetListByWriter();
             return View(values);
         }
 

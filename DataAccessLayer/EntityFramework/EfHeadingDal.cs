@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete;
 using DataAccessLayer.Concrete.Repositories;
 using EntityLayer.Concrete;
 using System;
@@ -9,7 +10,14 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.EntityFramework
 {
-   public class EfHeadingDal:GenericRepository<Heading>,IHeadingDal
+    public class EfHeadingDal : GenericRepository<Heading>, IHeadingDal
     {
+        Context context = new Context();
+       
+     
+        public List<Heading> GetListByWriter()
+        {
+            return context.Headings.Where(x => x.WriterID == 4).ToList();
+        }
     }
 }
