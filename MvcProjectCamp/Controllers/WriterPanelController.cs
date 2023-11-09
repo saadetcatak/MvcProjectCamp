@@ -7,6 +7,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
+using PagedList.Mvc;
+using BusinessLayer.ValidationRules;
+using FluentValidation.Results;
 
 namespace MvcProjectCamp.Controllers
 {
@@ -14,11 +18,44 @@ namespace MvcProjectCamp.Controllers
     {
         HeadingManager headingManager = new HeadingManager(new EfHeadingDal());
         CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
+        WriterManager writerManager = new WriterManager(new EfWriterDal());
         Context context = new Context();
+
+        [HttpGet]
         public ActionResult WriterProfile()
         {
-            return View();
+            string mail = (string)Session["WriterMail"];
+            var WriterID = context.Writers.Where(x => x.WriterMail == mail).Select(y => y.WriterID).FirstOrDefault();
+
+            ViewBag.BS = context.Headings.Where(x => x.WriterID == WriterID).Count();
+            ViewBag.IS = context.Contents.Where(x => x.WriterID == WriterID).Count();
+
+            var writerValue = writerManager.TGetByID(WriterID);
+            return View(writerValue);
+          
         }
+        [HttpPost]
+        public ActionResult WriterProfile(Writer writer)
+        {
+            WriterValidator writerValidator = new WriterValidator();
+            ValidationResult results = writerValidator.Validate(writer);
+
+            if (results.IsValid)
+            {
+                writerManager.TUpdate(writer);
+                return RedirectToAction("WriterProfile");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+            return View(writer);
+        }
+
+
 
         public ActionResult MyHeading(string p)
         {
@@ -86,6 +123,13 @@ namespace MvcProjectCamp.Controllers
             value.HStatus = false;
             headingManager.TDelete(value);
             return RedirectToAction("MyHeading");
+        }
+
+
+        public ActionResult AllHeading(int page=1)
+        {
+            var headings = headingManager.TGetList().ToPagedList(page,4);
+            return View(headings);
         }
     }
 }

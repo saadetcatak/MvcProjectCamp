@@ -70,10 +70,13 @@ namespace MvcProjectCamp.Controllers
                 ViewBag.error = "Kullanıcı Adınız veya Şifreniz Hatalı, Tekrar Deneyin.";
                 return RedirectToAction("WriterLogin","Login");
 
-            }
-
-            
-            return View();
+            }           
+        }
+        public ActionResult LogOut() 
+        { 
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("Headings","Default");
         }
     }
 }

@@ -14,15 +14,20 @@ namespace MvcProjectCamp.Controllers
     public class WriterPanelMessageController : Controller
     {
         MessageManager messageManager = new MessageManager(new EfMessageDal());
+        WriterManager writerManager = new WriterManager(new EfWriterDal());
         MessageValidator messageValidator = new MessageValidator();
         public ActionResult Inbox()
         {
-            var values = messageManager.TInboxList().OrderByDescending(x => x.MessageID).ToList();
+            string p = (string)Session["WriterMail"];
+            var writermailinfo = writerManager.TGetList().Where(x => x.WriterMail == p).Select(x => x.WriterMail).FirstOrDefault();
+            var values = messageManager.TGetList().OrderByDescending(x => x.MessageID).Where(x => x.ReceiverMail == writermailinfo).ToList();
             return View(values);
         }
         public ActionResult Sentbox()
         {
-            var values = messageManager.TSentList().OrderByDescending(x => x.MessageID).ToList();
+            string p = (string)Session["WriterMail"];
+            var writermailinfo = writerManager.TGetList().Where(x => x.WriterMail == p).Select(x => x.WriterMail).FirstOrDefault();
+            var values = messageManager.TGetList().OrderByDescending(x => x.MessageID).Where(x => x.SenderMail == writermailinfo).ToList();
             return View(values);
         }
         public PartialViewResult InboxPartial()
@@ -54,10 +59,11 @@ namespace MvcProjectCamp.Controllers
 
             if (results.IsValid)
             {
-                message.SenderMail = "emel@gmail.com";
-                message.MessageDate = DateTime.Now;
+                message.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
+
+                message.SenderMail = (string)Session["WriterMail"];
                 messageManager.TInsert(message);
-                return RedirectToAction("Sentbox", "WriterPanelMessage");
+                return RedirectToAction("Sentbox");
             }
 
             else
