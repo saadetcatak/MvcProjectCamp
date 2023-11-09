@@ -9,9 +9,11 @@ using System.Web.Security;
 
 namespace MvcProjectCamp.Controllers
 {
+    [AllowAnonymous]
     public class LoginController : Controller
     {
-        // GET: Login
+      
+
         [HttpGet]
         public ActionResult Index()
         {
@@ -52,7 +54,7 @@ namespace MvcProjectCamp.Controllers
         public ActionResult WriterLogin(Writer writer)
         {
             Context context = new Context();
-            var writeruser = context.Writers.FirstOrDefault(x => x.WriterName == writer.WriterMail && x.WriterPassword == writer.WriterPassword);
+            var writeruser = context.Writers.FirstOrDefault(x => x.WriterMail== writer.WriterMail && x.WriterPassword == writer.WriterPassword);
 
             if (writeruser != null)
             {

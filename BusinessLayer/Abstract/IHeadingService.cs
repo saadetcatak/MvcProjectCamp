@@ -9,6 +9,6 @@ namespace BusinessLayer.Abstract
 {
    public interface IHeadingService:IGenericService<Heading>
     {
-        List<Heading> GetListByWriter();
+        List<Heading> TGetListByWriter(int id);
     }
 }

@@ -22,15 +22,12 @@ namespace BusinessLayer.Concrete
             _headingDal = headingDal;
         }
 
-        public List<Heading> GetListByWriter()
-        {
-            return _headingDal.List(x => x.WriterID == 4);
-        }
+
 
         public void TDelete(Heading t)
         {
             _headingDal.Delete(t);
-            
+
         }
 
         public Heading TGetByID(int id)
@@ -41,6 +38,11 @@ namespace BusinessLayer.Concrete
         public List<Heading> TGetList()
         {
             return _headingDal.GetList();
+        }
+
+        public List<Heading> TGetListByWriter(int id)
+        {
+            return _headingDal.List(x => x.WriterID == id);
         }
 
         public void TInsert(Heading t)

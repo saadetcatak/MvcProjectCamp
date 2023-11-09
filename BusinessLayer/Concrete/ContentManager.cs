@@ -18,10 +18,7 @@ namespace BusinessLayer.Concrete
             _contentDal = contentDal;
         }
 
-        public List<Content> TGetListByWriter()
-        {
-            return _contentDal.List(x => x.WriterID == 4);
-        }
+      
 
         public void TDelete(Content t)
         {
@@ -52,6 +49,13 @@ namespace BusinessLayer.Concrete
         public void TUpdate(Content t)
         {
             _contentDal.Update(t);
+        }
+
+        public List<Content> TGetListByWriter(int id)
+        {
+            
+                return _contentDal.List(x => x.WriterID == id);
+            
         }
     }
 }

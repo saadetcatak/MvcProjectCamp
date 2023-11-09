@@ -9,7 +9,7 @@ namespace DataAccessLayer.Abstract
 {
     public interface IContentDal:IGenericDal<Content>
     {
-        List<Content> GetListByWriter();
+        List<Content> GetListByWriter(int id);
         
     }
 }

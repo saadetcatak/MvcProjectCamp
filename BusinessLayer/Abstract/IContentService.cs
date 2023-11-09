@@ -9,6 +9,6 @@ namespace BusinessLayer.Abstract
 {
    public interface IContentService:IGenericService<Content>
     {
-        List<Content> TGetListByWriter();
+        List<Content> TGetListByWriter(int id);
     }
 }

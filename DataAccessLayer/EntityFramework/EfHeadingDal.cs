@@ -12,12 +12,11 @@ namespace DataAccessLayer.EntityFramework
 {
     public class EfHeadingDal : GenericRepository<Heading>, IHeadingDal
     {
-        Context context = new Context();
-       
-     
-        public List<Heading> GetListByWriter()
+        Context context = new Context();       
+
+        public List<Heading> GetListByWriter(int id)
         {
-            return context.Headings.Where(x => x.WriterID == 4).ToList();
+            return context.Headings.Where(x => x.WriterID == id).ToList();
         }
     }
 }
