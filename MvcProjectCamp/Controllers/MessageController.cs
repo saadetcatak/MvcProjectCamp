@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Concrete;
 using BusinessLayer.ValidationRules;
+using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
@@ -15,6 +16,7 @@ namespace MvcProjectCamp.Controllers
     {
         MessageManager messageManager = new MessageManager(new EfMessageDal());
         MessageValidator messageValidator = new MessageValidator();
+        Context context = new Context();
         public ActionResult Inbox()
         {
             var values = messageManager.TInboxList().OrderByDescending(x => x.MessageID).ToList();
@@ -69,5 +71,18 @@ namespace MvcProjectCamp.Controllers
 
             return View(message);
         }
+
+       
+        public ActionResult GetAllMessage(string p)
+        {
+            var values = from x in context.Messages select x;
+            if (!string.IsNullOrEmpty(p))
+            {
+                values = values.Where(y => y.ReceiverMail.Contains(p));
+            }
+            //var values=context.Contents.ToList();
+            return View(values.ToList());
+        }
     }
+
 }

@@ -1,4 +1,6 @@
-﻿using DataAccessLayer.Concrete;
+﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -12,6 +14,7 @@ namespace MvcProjectCamp.Controllers
     [AllowAnonymous]
     public class LoginController : Controller
     {
+        WriterLoginManager loginManager = new WriterLoginManager(new EfWriterDal());
       
 
         [HttpGet]
@@ -53,9 +56,10 @@ namespace MvcProjectCamp.Controllers
         [HttpPost]
         public ActionResult WriterLogin(Writer writer)
         {
-            Context context = new Context();
-            var writeruser = context.Writers.FirstOrDefault(x => x.WriterMail== writer.WriterMail && x.WriterPassword == writer.WriterPassword);
+            //    Context context = new Context();
+            //    var writeruser = context.Writers.FirstOrDefault(x => x.WriterMail== writer.WriterMail && x.WriterPassword == writer.WriterPassword);
 
+            var writeruser=loginManager.GetWriter(writer.WriterMail,writer.WriterPassword);
             if (writeruser != null)
             {
 

@@ -147,6 +147,7 @@
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AdminCategoryController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ChartController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ContentController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
@@ -163,6 +164,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CategoryClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Roles\AdminRoleProvider.cs" />
   </ItemGroup>
@@ -1999,6 +2001,7 @@
     <Content Include="AdminLTE-3.0.4\plugins\toastr\toastr.css" />
     <Content Include="AdminLTE-3.0.4\plugins\toastr\toastr.min.css" />
     <Content Include="AdminLTE-3.0.4\plugins\toastr\toastr.min.js" />
+    <Content Include="AdminLTE-3.0.4\saadet.jpg" />
     <Content Include="AdminLTE-3.0.4\starter.html" />
     <Content Include="colorlib-error-404-10\css\style.css" />
     <Content Include="colorlib-error-404-10\img\bg.jpg" />
@@ -2499,6 +2502,48 @@
     <Content Include="login-form-20\scss\bootstrap\_utilities.scss" />
     <Content Include="login-form-20\scss\bootstrap\_variables.scss" />
     <Content Include="login-form-20\scss\style.scss" />
+    <Content Include="web\css\aos-animation.css" />
+    <Content Include="web\css\aos.css" />
+    <Content Include="web\css\bootstrap.css" />
+    <Content Include="web\css\fontawesome-all.css" />
+    <Content Include="web\css\roadmap.css" />
+    <Content Include="web\css\simpleLightbox.css" />
+    <Content Include="web\css\snow.css" />
+    <Content Include="web\css\style.css" />
+    <Content Include="web\images\banner.jpg" />
+    <Content Include="web\images\close.png" />
+    <Content Include="web\images\contact.jpg" />
+    <Content Include="web\images\exp.jpg" />
+    <Content Include="web\images\g1.jpg" />
+    <Content Include="web\images\g2.jpg" />
+    <Content Include="web\images\g3.jpg" />
+    <Content Include="web\images\g4.jpg" />
+    <Content Include="web\images\g5.jpg" />
+    <Content Include="web\images\g6.jpg" />
+    <Content Include="web\images\g7.jpg" />
+    <Content Include="web\images\g8.jpg" />
+    <Content Include="web\images\g9.jpg" />
+    <Content Include="web\images\loader.gif" />
+    <Content Include="web\images\move_up.png" />
+    <Content Include="web\images\next.png" />
+    <Content Include="web\images\prev.png" />
+    <Content Include="web\images\serve.jpg" />
+    <Content Include="web\images\stats.jpg" />
+    <Content Include="web\images\testimonials.jpg" />
+    <Content Include="web\index.html" />
+    <Content Include="web\js\aos.js" />
+    <Content Include="web\js\bootstrap.js" />
+    <Content Include="web\js\easing.js" />
+    <Content Include="web\js\jquery-2.2.3.min.js" />
+    <Content Include="web\js\jquery.countup.js" />
+    <Content Include="web\js\jquery.roadmap.js" />
+    <Content Include="web\js\jquery.waypoints.min.js" />
+    <Content Include="web\js\move-top.js" />
+    <Content Include="web\js\simpleLightbox.js" />
+    <Content Include="web\w3layouts-license.txt" />
+    <Content Include="web\webfonts\fa-brands-400.svg" />
+    <Content Include="web\webfonts\fa-regular-400.svg" />
+    <Content Include="web\webfonts\fa-solid-900.svg" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2568,10 +2613,26 @@
     <Content Include="Views\WriterPanel\AllHeading.cshtml" />
     <Content Include="Views\WriterPanelContent\AddContent.cshtml" />
     <Content Include="Views\WriterPanelContent\ToDoList.cshtml" />
+    <Content Include="Views\Home\HomePage.cshtml" />
+    <Content Include="web\webfonts\fa-brands-400.eot" />
+    <Content Include="web\webfonts\fa-brands-400.ttf" />
+    <Content Include="web\webfonts\fa-brands-400.woff" />
+    <Content Include="web\webfonts\fa-brands-400.woff2" />
+    <Content Include="web\webfonts\fa-regular-400.eot" />
+    <Content Include="web\webfonts\fa-regular-400.ttf" />
+    <Content Include="web\webfonts\fa-regular-400.woff" />
+    <Content Include="web\webfonts\fa-regular-400.woff2" />
+    <Content Include="web\webfonts\fa-solid-900.eot" />
+    <Content Include="web\webfonts\fa-solid-900.ttf" />
+    <Content Include="web\webfonts\fa-solid-900.woff" />
+    <Content Include="web\webfonts\fa-solid-900.woff2" />
+    <Content Include="Views\Content\GetAllContent.cshtml" />
+    <Content Include="Views\Message\GetAllMessage.cshtml" />
+    <Content Include="Views\Chart\Index.cshtml" />
+    <Content Include="Views\Heading\HeadingReport.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

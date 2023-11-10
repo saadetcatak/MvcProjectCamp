@@ -1,26 +1,33 @@
-﻿@model List<EntityLayer.Concrete.Writer>
+﻿﻿@using EntityLayer.Concrete
+@model List<Writer>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<!DOCTYPE html>
-<html>
+<section class="content">
+    <div class="container-fluid">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Yazar Listesi</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
 
-<body class="hold-transition sidebar-mini">
-
-    <!-- Main content -->
-    <section class="content">
-
-        <!-- Default box -->
-        <br />
-        <br />
         <div class="card card-solid">
             <div class="card-body pb-0">
-                <div class="row d-flex align-content-between">
+                <div class="row d-flex align-items-stretch">
                     @foreach (var item in Model)
                     {
-                        <div class="col-12 col-sm-6 col-md-3 d-flex align-items-stretch">
+                        <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch">
                             <div class="card bg-light">
                                 <div class="card-header text-muted border-bottom-0">
                                     @item.WriterTitle
@@ -28,13 +35,12 @@
                                 <div class="card-body pt-0">
                                     <div class="row">
                                         <div class="col-7">
-                                            <h2 class="lead"><b>@item.WriterName  @item.WriterSurname</b></h2>
-
-                                            <p class="text-muted text-sm"><b>Hakkında:</b>@item.WriterAbout</p>
-
+                                            <h2 class="lead my-3"><b>@item.WriterName @item.WriterSurname</b></h2>
+                                            <p class="text-muted text-sm"><b>Hakkında: </b> @item.WriterAbout </p>
                                             <ul class="ml-4 mb-0 fa-ul text-muted">
-                                                <li class="small"><span class="fa-li"><i class="fas fa-lg fa-mail-bulk"></i></span>Mail:@item.WriterMail</li>
-
+                                                <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Adres: İstanbul / Türkiye</li>
+                                                <br />
+                                                <li class="small"><span class="fa-li"><i class="fas fa-lg fa-mail-bulk"></i></span> E-Mail: @item.WriterMail</li>
                                             </ul>
                                         </div>
                                         <div class="col-5 text-center">
@@ -43,29 +49,25 @@
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <div class="text-right">
-                                        <a href="/Writer/UpdateWriter/@item.WriterID" class="btn btn-sm bg-teal">
-                                            <i class="fas fa-user-edit">Düzenle</i>
+                                    <div class="text-center">
+                                        <a href="#" class="btn btn-sm bg-teal">
+                                            <i class="fas fa-comments mr-1"></i> Yazarın Yazıları
                                         </a>
-                                        <a href="#" class="btn btn-sm btn-primary">
-                                            <i class="fas fa-comment-alt"></i> Başlıklarını Gör
-                                        </a>
-                                        <a href="/Writer/DeleteWriter/@item.WriterID" class="btn btn-sm btn-danger">
-                                            <i class="fas fa-trash-alt"></i>
+                                        <a href="/Writer/UpdateWriter/@item.WriterID" class="btn btn-sm btn-primary">
+                                            <i class="fas fa-user mr-1"></i> Profili Düzenle
                                         </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     }
-
                 </div>
             </div>
-
+            <div class="card-footer clearfix">
+                <a href="/Writer/AddWriter/" class="btn btn-outline-primary col-md-12">Yeni Yazar Ekle!</a>
+            </div>
         </div>
+    </div>
+</section>
 
-        <a href="/Writer/AddWriter" class="btn btn-primary">Yeni Yazar Ekle</a>
-    </section>
-
-</body>
-</html>
+https://media.istockphoto.com/id/1185028107/tr/foto%C4%9Fraf/gen%C3%A7-g%C3%BClen-kad%C4%B1n-ceplerinde-elleri-ile-ayakta-kopya-alan%C4%B1-ile-bo%C5%9F-beyaz-t-shirt-
