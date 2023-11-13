@@ -5,6 +5,7 @@
         ViewBag.Title = "AllHeading";
         Layout = "~/Views/Shared/_WriterLayout.cshtml";
         string color = "";
+        int count = 0;
     }
 
     <section class="content">
@@ -55,7 +56,9 @@
                             </thead>
                             <tbody>
                                 @foreach (var item in Model)
+
                                 {
+                                    count++;
                                     if (item.HStatus == true)
                                     {
 
@@ -108,7 +111,7 @@
                                             color = "badge badge-secondary";
                                         }
                                         <tr>
-                                            <td>@item.HeadingID</td>
+                                            <td>@count</td>
                                             <td>
                                                 <a>@item.HeadingName</a>
                                                 <br />

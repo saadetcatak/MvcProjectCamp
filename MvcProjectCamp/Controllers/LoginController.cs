@@ -41,11 +41,11 @@ namespace MvcProjectCamp.Controllers
             else
             {
                 ViewBag.error = "Kullanıcı Adınız veya Şifreniz Hatalı, Tekrar Deneyin.";
-                return RedirectToAction("Index");
+                return RedirectToAction("Index","Login");
 
             }
 
-            return View();
+            
         }
         [HttpGet]
         public ActionResult WriterLogin()

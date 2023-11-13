@@ -146,6 +146,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AdminCategoryController.cs" />
+    <Compile Include="Controllers\AuthorizationController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ChartController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
@@ -157,6 +158,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\WriterController.cs" />
     <Compile Include="Controllers\WriterPanelContentController.cs" />
     <Compile Include="Controllers\WriterPanelController.cs" />
@@ -2502,6 +2504,12 @@
     <Content Include="login-form-20\scss\bootstrap\_utilities.scss" />
     <Content Include="login-form-20\scss\bootstrap\_variables.scss" />
     <Content Include="login-form-20\scss\style.scss" />
+    <Content Include="web\1.png" />
+    <Content Include="web\2.png" />
+    <Content Include="web\3.png" />
+    <Content Include="web\4.png" />
+    <Content Include="web\5.png" />
+    <Content Include="web\6.png" />
     <Content Include="web\css\aos-animation.css" />
     <Content Include="web\css\aos.css" />
     <Content Include="web\css\bootstrap.css" />
@@ -2630,6 +2638,10 @@
     <Content Include="Views\Message\GetAllMessage.cshtml" />
     <Content Include="Views\Chart\Index.cshtml" />
     <Content Include="Views\Heading\HeadingReport.cshtml" />
+    <Content Include="Views\Test\SweetAlert.cshtml" />
+    <Content Include="Views\Authorization\Index.cshtml" />
+    <Content Include="Views\Authorization\AddAdmin.cshtml" />
+    <Content Include="Views\Authorization\UpdateAdmin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

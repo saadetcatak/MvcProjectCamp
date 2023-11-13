@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "MyHeading";
     Layout = "~/Views/Shared/_WriterLayout.cshtml";
+    int count = 0;
 }
 
 
@@ -56,8 +57,9 @@
                         <tbody>
                             @foreach (var item in Model)
                             {
+                                count++;
                                 <tr>
-                                    <td>@item.HeadingID</td>
+                                    <td>@count</td>
                                     <td>
                                         <a>@item.HeadingName</a>
                                         <br />
@@ -99,7 +101,7 @@
                         </tbody>
                     </table>
                     <div class="card-footer clearfix">
-                        <a href="/WriterPanel/NewHeading/" class="btn btn-outline-primary col-md-12">Yeni Başlık Ekle!</a>
+                        <a href="/WriterPanel/NewHeading/" class="btn btn-outline-primary col-md-1">Yeni Başlık Ekle!</a>
                     </div>
                 </div>
                 <!-- /.card-body -->

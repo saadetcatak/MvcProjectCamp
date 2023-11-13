@@ -119,10 +119,24 @@ namespace MvcProjectCamp.Controllers
 
         public ActionResult DeleteHeading(int id)
         {
-            var value = headingManager.TGetByID(id);
-            value.HStatus = false;
-            headingManager.TDelete(value);
-            return RedirectToAction("MyHeading");
+            //var value = headingManager.TGetByID(id);
+            //value.HStatus = false;
+            //headingManager.TDelete(value);
+            //return RedirectToAction("MyHeading");
+            var values = headingManager.TGetByID(id);
+            if (values.HStatus == true)
+            {
+                values.HStatus = false;
+                
+            }
+            else if (values.HStatus == false)
+            {
+                values.HStatus = true;
+                
+            }
+            headingManager.TUpdate(values);
+
+            return RedirectToAction("MyHeaders");
         }
 
 
